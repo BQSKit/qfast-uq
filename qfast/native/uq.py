@@ -121,13 +121,20 @@ def parse_uq_out ( uq_out ):
             else:
                 parsed_gate[1] = parsed_gate[1].replace( "Pi", "3.14159265358979324" )
 
-                if "*" in parsed_gate[1]:
+                if "/" in parsed_gate[1]:
+                    num, dem = parsed_gate[1].split( "/" )
+
+                    if "*" in num:
+                        left, right = num.split( "*" )
+                        left = left.replace( "(", "" )
+                        right = right.replace( ")", "" )
+                        num = float( left ) * float( right )
+
+                    parsed_gate[1] = float( num ) / float( dem )
+
+                elif "*^" in parsed_gate[1]:
                     exp = int( parsed_gate[1].split("*^")[1] )
                     parsed_gate[1] = float( parsed_gate[1].split("*^")[0] ) * (10 ** exp)
-
-                elif "/" in parsed_gate[1]:
-                    num, dem = parsed_gate[1].split( "/" )
-                    parsed_gate[1] = float( num ) / float( dem )
 
                 parsed_gate[1] = float( parsed_gate[1] )
 
