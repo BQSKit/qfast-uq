@@ -143,7 +143,7 @@ qft4 = np.array(
 def synthesize ( utry ):
     """
     Synthesize a unitary matrix and return qasm code using QFAST with
-    qiskit's kak native tool.
+    the UniversalQ native tool.
 
     Args:
         utry (np.ndarray): The unitary matrix to synthesize
