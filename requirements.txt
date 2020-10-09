@@ -1,2 +1,3 @@
-qfast>=1.0.0
-pyzmq>=19.0.0
+qfast>=2.0.0
+numpy>=1.16.6
+qiskit>=0.16.1

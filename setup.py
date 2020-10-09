@@ -18,15 +18,15 @@ with open( req_path ) as f:
         requirements.remove( '' )
 
 setup( name = "qfast-uq",
-       version = "1.0.1",
+       version = "2.0.0",
        description = "QFAST UniversalQ Compiler Plugin",
        long_description = long_description,
        long_description_content_type = "text/markdown",
-       url = "https://github.com/edyounis/qfast-uq",
+       url = "https://github.com/BQSKit/qfast-uq",
        author = "Ed Younis",
-       author_email = "edyounis@berkeley.edu",
+       author_email = "edyounis@lbl.gov",
        classifiers = [
-           "Development Status :: 2 - Pre-Alpha",
+           "Development Status :: 5 - Production/Stable",
            "Environment :: Console",
            "Intended Audience :: Developers",
            "Intended Audience :: Science/Research",
@@ -43,10 +43,10 @@ setup( name = "qfast-uq",
        ],
        keywords = "quantum synthesis compilation",
        project_urls = {
-           "Bug Tracker": "https://github.com/edyounis/qfast-uq/issues",
-           "Source Code": "https://github.com/edyounis/qfast-uq"
+           "Bug Tracker": "https://github.com/BQSKit/qfast-uq/issues",
+           "Source Code": "https://github.com/BQSKit/qfast-uq"
        },
-       packages = [ "qfast.native" ],
+       packages = [ "qfast.instantiation.native" ],
        install_requires = requirements,
        python_requires = ">=3.5, <4",
        package_data = { "qfast.native" : [ "QI.m", "UniversalQCompiler.m" ] },
